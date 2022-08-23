@@ -9,13 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(),
-      themeMode: ThemeMode.light,
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      initialRoute: "/home",
+      theme: ThemeData(
+        primarySwatch: Colors.amber,
+      ),
+      initialRoute: "/",
       routes: {
         "/": (context) => Login(),
-        "/home": ((context) => Home()),
+        "/home": ((context) => Login()),
         "/login": (context) => Login(),
       },
     );
