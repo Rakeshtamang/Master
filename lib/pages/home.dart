@@ -8,7 +8,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Master the flutter in 30 days'), centerTitle: true),
+        title: Text('Catalog App '),
+        centerTitle: true,
+      ),
       body: Center(
         child: Container(
           child: Text(
