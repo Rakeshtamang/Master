@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:master/Models/catalog.dart';
 import 'package:master/widgets/drawer.dart';
+import 'package:master/widgets/itemwidget.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(10, ((index) => CatalogModel.products[0]));
     return Scaffold(
       appBar: AppBar(
         title: Text('Catalog App '),
         centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          child: Text(
-            'Welcome to  days of flutter',
-            style: TextStyle(
-                fontSize: 40,
-                color: Colors.blue,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic),
-          ),
-        ),
-      ),
+      body: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: ((context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+            );
+          })),
       drawer: MyDrawer(),
     );
   }
